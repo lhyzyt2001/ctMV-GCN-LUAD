@@ -1,0 +1,10 @@
+{
+  "degree_model_r_squared": 0.6582765790778533,
+  "hub_definition": "STRING degree percentile > 0.95 among unlabeled candidates",
+  "structural_gene_definition": "^(?:RPL\\d|RPS\\d|MRPL\\d|MRPS\\d|MT-)",
+  "removed_gene_count": 1204,
+  "immune_genes_removed": false,
+  "broad_housekeeping_list_removed": false,
+  "reason": "Immune biology is relevant to LUAD and broad housekeeping removal lacks a justified versioned reference; both are retained.",
+  "nonredundant_summary": "Complete GSEA results are retained. Representative terms are selected separately within each library and NES direction by greedy leading-edge overlap coefficient >= 0.50."
+}

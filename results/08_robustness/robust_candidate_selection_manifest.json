@@ -1,0 +1,26 @@
+{
+  "selection_timing": "Post hoc robustness analysis developed after diagnosing network-degree bias; not preregistered or prespecified.",
+  "eligibility_exclusions": [
+    "top 5% STRING degree among unlabeled genes",
+    "ribosomal or mitochondrial structural gene symbol pattern",
+    "12-gene canonical technical housekeeping panel"
+  ],
+  "immune_gene_exclusion": false,
+  "immune_gene_reason": "Immune biology is directly relevant to lung adenocarcinoma; blanket removal would be biologically unjustified.",
+  "score_formula": "0.50*degree-residual percentile + 0.25*top-500 seed frequency + 0.25*inverse rank-SD percentile",
+  "external_results_used_for_selection": false,
+  "canonical_housekeeping_panel": [
+    "ACTB",
+    "B2M",
+    "GAPDH",
+    "GUSB",
+    "HMBS",
+    "HPRT1",
+    "PGK1",
+    "PPIA",
+    "RPLP0",
+    "TBP",
+    "TFRC",
+    "YWHAZ"
+  ]
+}

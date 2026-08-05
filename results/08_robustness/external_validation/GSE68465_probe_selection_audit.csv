@@ -1,0 +1,21 @@
+﻿Robust_Candidate_Rank,Gene,Selected_Probe,Available_Probe_Count,Selection_Rule
+1,CCDC80,,0,not mapped
+2,LUM,201744_s_at,1,maximum IQR; outcome-blind
+3,CTSG,205653_at,1,maximum IQR; outcome-blind
+4,MFAP2,203417_at,1,maximum IQR; outcome-blind
+5,FMOD,202709_at,1,maximum IQR; outcome-blind
+6,CFP,206380_s_at,1,maximum IQR; outcome-blind
+7,PALMD,218736_s_at,1,maximum IQR; outcome-blind
+8,MASP1,213749_at,3,maximum IQR; outcome-blind
+9,CST2,208555_x_at,1,maximum IQR; outcome-blind
+10,ACTA2,200974_at,2,maximum IQR; outcome-blind
+11,TREML1,,0,not mapped
+12,ISLR,207191_s_at,1,maximum IQR; outcome-blind
+13,APOA2,219466_s_at,2,maximum IQR; outcome-blind
+14,FCER1A,211734_s_at,1,maximum IQR; outcome-blind
+15,POSTN,214981_at,2,maximum IQR; outcome-blind
+16,AMBP,205477_s_at,2,maximum IQR; outcome-blind
+17,C4A,208451_s_at,2,maximum IQR; outcome-blind
+18,FCN3,205866_at,1,maximum IQR; outcome-blind
+19,PLAC9,,0,not mapped
+20,LTC4S,206480_at,1,maximum IQR; outcome-blind

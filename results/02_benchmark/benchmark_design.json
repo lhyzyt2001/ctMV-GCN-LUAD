@@ -1,0 +1,8 @@
+{
+  "evaluation_type": "transductive node classification",
+  "label_separation": "Outer-test labels are hidden from model fitting, early stopping, threshold selection, and RWR seed construction.",
+  "graph_visibility": "All nodes and disease-independent graph topology are present during message passing; this is not inductive evaluation on a new graph or cohort.",
+  "outer_validation": "RepeatedStratifiedKFold with 5 folds and 3 repeats.",
+  "inner_validation": "15% of each outer-training fold for early stopping and threshold selection.",
+  "claim_boundary": "Results support transductive prioritization within the assembled gene graph, not generalization to an unseen graph."
+}

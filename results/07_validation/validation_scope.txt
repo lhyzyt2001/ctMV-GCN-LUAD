@@ -1,0 +1,1 @@
+The paired tumor-normal analysis uses matched TCGA-LUAD patient samples and the post hoc robustness-aware top 20. Stage associations use the same TCGA cohort. Network-degree analyses assess potential topology bias. These analyses strengthen biological plausibility and robustness assessment but are not independent cohort or experimental validation.

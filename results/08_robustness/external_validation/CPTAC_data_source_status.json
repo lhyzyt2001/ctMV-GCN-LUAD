@@ -1,0 +1,7 @@
+{
+  "status": "validated local cache used because API access failed: ConnectionError",
+  "requested_gene_count": 20,
+  "genes_with_returned_protein_data": 16,
+  "profile": "luad_cptac_2020_protein_quantification",
+  "sample_list": "luad_cptac_2020_protein_quantification"
+}

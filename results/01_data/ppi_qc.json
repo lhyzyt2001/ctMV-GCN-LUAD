@@ -1,0 +1,8 @@
+{
+  "network_name": "STRING high-confidence functional association network",
+  "combined_score_threshold": 700,
+  "raw_string_rows": 13715404,
+  "node_count": 25242,
+  "directed_edges_after_symmetrization": 403242,
+  "note": "STRING combined scores represent functional associations and are not described as physical PPI."
+}

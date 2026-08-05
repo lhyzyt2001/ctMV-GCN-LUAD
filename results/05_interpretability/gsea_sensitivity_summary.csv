@@ -1,0 +1,4 @@
+﻿Analysis,Ranked_Genes,Positive_FDR_lt_0.05,Negative_FDR_lt_0.05,Hallmark_Positive_FDR_lt_0.05,GO_BP_Positive_FDR_lt_0.05,Nonredundant_Positive_Representatives,Nonredundant_Negative_Representatives,Zero_FDR_Count
+primary,24058,1058,0,26,1032,503,0,6
+degree_residualized,24058,860,391,27,833,360,126,170
+hub_structural_filtered,22854,577,0,20,557,300,0,4

@@ -1,0 +1,8 @@
+{
+  "network_name": "weighted shared-pathway similarity graph",
+  "pathway_count": 657,
+  "top_k_per_gene_before_symmetrization": 12,
+  "directed_edges_after_symmetrization": 40290,
+  "construction": "gene-pathway incidence H multiplied as H diag(1/pathway_size) H^T, followed by top-k sparsification",
+  "alphabetical_ring_removed": true
+}

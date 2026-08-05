@@ -1,0 +1,18 @@
+{
+  "retrieval_date": "2026-08-05",
+  "permutations": 2000,
+  "libraries": {
+    "MSigDB_Hallmark_2020": {
+      "gene_set_count": 50,
+      "source": "versioned local Enrichr GMT snapshot",
+      "snapshot": "external_data_root/gene_sets/Enrichr.MSigDB_Hallmark_2020.gmt",
+      "sha256": "37dec27de222850839999c087ee3eede8fd1179c52b45fe5734f727fa21d601c"
+    },
+    "GO_Biological_Process_2021": {
+      "gene_set_count": 6036,
+      "source": "versioned local Enrichr GMT snapshot",
+      "snapshot": "external_data_root/gene_sets/Enrichr.GO_Biological_Process_2021.gmt",
+      "sha256": "6e11e519e5916adfdda8d91050ca6dae01884c4e5ea97e052c535255718efd46"
+    }
+  }
+}

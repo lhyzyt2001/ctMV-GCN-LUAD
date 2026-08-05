@@ -1,0 +1,26 @@
+{
+  "nodes": 25242,
+  "positive_labels": 1184,
+  "positive_rate": 0.046905950400126774,
+  "feature_count": 15,
+  "cell_types": [
+    "B",
+    "CD4Tn",
+    "CD8Tem",
+    "CD8Tcm",
+    "CD8Tex",
+    "pDC",
+    "cDC2",
+    "Endothelial",
+    "Epithelial",
+    "Fibroblasts",
+    "Mast",
+    "Monocyte",
+    "M2",
+    "Oligodendrocyte",
+    "Plasma"
+  ],
+  "ppi_edges": 403242,
+  "celltype_similarity_edges": 132776,
+  "pathway_edges": 40290
+}

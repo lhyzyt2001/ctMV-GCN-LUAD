@@ -1,0 +1,7 @@
+﻿{
+    "source":  "data/OT-EFO_0000571-associated-targets-2026_3_23-v0_0.tsv",
+    "disease_id":  "EFO_0000571",
+    "positive_definition":  "maxClinicalTrialPhase \u003e 0",
+    "positive_gene_count":  1232,
+    "global_score_is_not_used_as_the_therapeutic_label":  true
+}

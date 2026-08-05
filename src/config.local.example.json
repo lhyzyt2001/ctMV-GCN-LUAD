@@ -1,0 +1,6 @@
+{
+  "data_root": "../data/core",
+  "source_root": "../data/core",
+  "external_data_root": "../data/external_validation",
+  "result_root": "../results_final"
+}

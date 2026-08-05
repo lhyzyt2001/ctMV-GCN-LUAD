@@ -1,0 +1,37 @@
+{
+  "release_date": "2026-08-05",
+  "result_root_name": "results_final",
+  "generation": "Generated from an initially empty result directory by the final pipeline stages.",
+  "candidate_set": "Post hoc robustness-aware top 20 used consistently across TCGA, GSE68465, CPTAC and DepMap analyses.",
+  "evaluation_design": "Transductive repeated 5-fold outer cross-validation with 3 repeats; outer-test labels hidden while all nodes and disease-independent topology remain visible.",
+  "matched_auprc_rule": "The 1:1 degree-matched cohort has prevalence 0.5 and random AUPRC 0.5; only within-matched-cohort method contrasts are interpreted.",
+  "cptac_claim_boundary": "Tumor protein profile values use a study-specific zero reference and are not paired tumor-normal measurements.",
+  "figures": {
+    "png_files": 43,
+    "vector_pdf_files": 43,
+    "workflow_png_dpi": 600,
+    "workflow_tiff_dpi": 600,
+    "workflow_editable_svg": true,
+    "paired_png_pdf_missing": 0
+  },
+  "verification": {
+    "python_ast_errors": 0,
+    "duplicate_merge_suffix_columns_in_integrated_candidate_table": 0,
+    "legacy_external_input_cache_inside_results_final": false,
+    "machine_specific_absolute_paths_in_text_results": false
+  },
+  "primary_reference_files": [
+    "02_benchmark/benchmark_summary.csv",
+    "00_workflow/Figure_1_scTDA_GCN_framework_schematic.pdf",
+    "00_workflow/Figure_1_scTDA_GCN_workflow.pdf",
+    "02_benchmark/benchmark_design.json",
+    "08_robustness/degree_matched_bootstrap_metrics.csv",
+    "08_robustness/degree_matched_auprc_comparisons.csv",
+    "08_robustness/degree_matched_design.json",
+    "08_robustness/robust_top20.csv",
+    "07_validation/robust_top20_integrated_candidate_evidence.csv",
+    "06_tcga/TCGA_LUAD_robust_top20_survival_results.csv",
+    "06_tcga/TCGA_LUAD_robust_top20_new_tumor_event_results.csv",
+    "08_robustness/external_validation/external_validation_with_dependency_summary.csv"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "design": "Within each empirical STRING-degree stratum, positives and an equal number of negatives are resampled with replacement.",
+  "matched_positive_fraction": 0.5,
+  "random_auprc": 0.5,
+  "original_positive_fraction": 0.046905950400126774,
+  "interpretation": "Matched AUPRC quantifies discrimination after degree matching. It must not be numerically compared with AUPRC from the original imbalanced evaluation; only within-matched-sample method differences are directly comparable."
+}

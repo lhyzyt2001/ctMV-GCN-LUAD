@@ -1,0 +1,19 @@
+{
+  "architecture": "three-view GCN with node-level local attention",
+  "loss": "class-weighted cross-entropy",
+  "ensemble_seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "epochs_selected_from_cross_validation_median": 46,
+  "global_attention_removed_from_primary_model": true,
+  "nnPU_removed_from_primary_model_because_cross_validation_showed_no_advantage": true
+}

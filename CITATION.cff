@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or its derived results, please cite this repository and the associated manuscript."
+title: "scTDA-GCN: multiview graph learning for lung adenocarcinoma gene prioritization"
+type: software
+version: 1.0.0
+date-released: 2026-08-05
+url: "https://github.com/lhyzyt2001/scTDA-GCN-LUAD"
+repository-code: "https://github.com/lhyzyt2001/scTDA-GCN-LUAD"
+license: MIT
+authors:
+  - family-names: Zhang
+    given-names: Yuting
+  - family-names: Feng
+    given-names: Jihua
+  - family-names: Yang
+    given-names: Jiahui
+  - family-names: Chen
+    given-names: Zhongxing
+  - family-names: Li
+    given-names: Longfei
+keywords:
+  - lung adenocarcinoma
+  - graph neural network
+  - gene prioritization
+  - single-cell transcriptomics
+  - network degree
+

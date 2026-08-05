@@ -1,0 +1,52 @@
+{
+  "candidate_selection": "Post hoc robustness-aware top 20; not preregistered or prespecified.",
+  "tested_genes": [
+    "CCDC80",
+    "LUM",
+    "CTSG",
+    "MFAP2",
+    "FMOD",
+    "CFP",
+    "PALMD",
+    "MASP1",
+    "CST2",
+    "ACTA2",
+    "TREML1",
+    "ISLR",
+    "APOA2",
+    "FCER1A",
+    "POSTN",
+    "AMBP",
+    "C4A",
+    "FCN3",
+    "PLAC9",
+    "LTC4S"
+  ],
+  "unmapped_genes": [],
+  "paired_patients_minimum": 58,
+  "paired_tumor_normal_FDR_lt_0.05": [
+    "CCDC80",
+    "CTSG",
+    "MFAP2",
+    "CFP",
+    "PALMD",
+    "MASP1",
+    "CST2",
+    "TREML1",
+    "ISLR",
+    "APOA2",
+    "FCER1A",
+    "POSTN",
+    "C4A",
+    "FCN3",
+    "PLAC9",
+    "LTC4S"
+  ],
+  "stage_association_FDR_lt_0.05": [
+    "CTSG",
+    "TREML1",
+    "C4A",
+    "LTC4S"
+  ],
+  "interpretation": "These are secondary TCGA expression and clinical-association analyses, not independent experimental validation of therapeutic efficacy."
+}

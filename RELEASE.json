@@ -1,0 +1,12 @@
+{
+  "release": "1.0.0",
+  "release_date": "2026-08-05",
+  "repository": "https://github.com/lhyzyt2001/scTDA-GCN-LUAD",
+  "tracked_file_count_excluding_manifest": 160,
+  "total_bytes_excluding_git": 73875628,
+  "largest_file_bytes": 14518306,
+  "raw_third_party_data_included": false,
+  "patient_level_tcga_working_table_included": false,
+  "model_weights_or_intermediate_tensors_included": false,
+  "derived_publication_results_included": true
+}

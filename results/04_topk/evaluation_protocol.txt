@@ -1,0 +1,1 @@
+Every node is scored only when it is in the outer test fold. Out-of-fold predictions are pooled within each repeat; no early-stopping validation label is counted as a hidden test target. The random baseline equals the clinical-target prevalence in the same candidate pool.

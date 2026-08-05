@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "release": "DepMap Public 26Q1",
+  "input_mode": "portal custom download with cell-line metadata",
+  "input_snapshot": "external_data_root/DepMap_Public_26Q1_LUAD_top20_CRISPR.csv",
+  "data_source": "https://depmap.org/portal/data_page/?tab=customDownloads",
+  "retrieval_date": "2026-07-21",
+  "luad_model_count": 53,
+  "tested_gene_count": 19,
+  "supported_gene_count": 0,
+  "support_rule": "FDR<0.05 and median gene effect<=-0.5 or >=25% LUAD models with gene effect<=-0.5",
+  "interpretation": "Cell-line dependency supports functional relevance but does not establish patient efficacy."
+}

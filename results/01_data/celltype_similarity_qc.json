@@ -1,0 +1,24 @@
+{
+  "network_name": "cell-type expression-profile similarity network",
+  "cell_types": [
+    "B",
+    "CD4Tn",
+    "CD8Tem",
+    "CD8Tcm",
+    "CD8Tex",
+    "pDC",
+    "cDC2",
+    "Endothelial",
+    "Epithelial",
+    "Fibroblasts",
+    "Mast",
+    "Monocyte",
+    "M2",
+    "Oligodendrocyte",
+    "Plasma"
+  ],
+  "knn_k": 12,
+  "mutual_knn": true,
+  "directed_edges": 132776,
+  "note": "The input contains cell-type aggregated expression, not a per-cell matrix; the graph is not called a single-cell co-expression graph."
+}

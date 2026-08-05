@@ -1,0 +1,1 @@
+benchmark_curves contains the complete strong-baseline comparison, including RWR. ablation_curves contains only GNN variants that were evaluated in the same OOF design. It must not be described as a complete benchmark. Legend values report ROC-AUC and AUPRC.

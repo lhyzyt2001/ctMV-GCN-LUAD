@@ -1,0 +1,19 @@
+{
+  "candidate_selection": "Post hoc robustness-aware top 20 developed after degree-bias diagnosis; not preregistered or prespecified.",
+  "CPTAC": {
+    "study": "luad_cptac_2020",
+    "source": "cBioPortal public API",
+    "profile": "luad_cptac_2020_protein_quantification",
+    "test": "two-sided one-sample Wilcoxon against the profile's study-specific zero reference",
+    "claim_boundary": "The cBioPortal tumor-only profile is not a paired tumor-normal comparison and cannot establish cancer-specific protein differential abundance."
+  },
+  "GSE68465": {
+    "source": "NCBI GEO series matrix, GPL96",
+    "probe_selection": "maximum IQR without outcome labels",
+    "tumor_normal_test": "two-sided Mann-Whitney; 443 LUAD and 19 normal samples expected",
+    "survival_model": "Cox PH per expression SD, adjusted for age, sex, nodal positivity, and pT3-4"
+  },
+  "multiple_testing": "Benjamini-Hochberg within each endpoint over all mapped robustness-aware candidates.",
+  "direction_rule": "Cross-omic sign is reported explicitly. Because the CPTAC zero reference is not adjacent normal tissue, same sign is descriptive and is not labelled tumor-normal concordance.",
+  "interpretation": "Expression, survival, and tumor protein profile values are separate supporting endpoints; significance is not counted as concordant evidence when signs oppose, and none demonstrates therapeutic efficacy or dependency."
+}
