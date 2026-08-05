@@ -49,11 +49,17 @@ def main() -> None:
         "--fresh", action="store_true",
         help="Delete only the configured directory named results_final before running.",
     )
+    parser.add_argument(
+        "--check-inputs", action="store_true",
+        help="Validate required input files and frozen SHA-256 checksums, then exit.",
+    )
     args = parser.parse_args()
+    root = Path(__file__).resolve().parent
+    if args.check_inputs:
+        raise SystemExit(subprocess.run([sys.executable, str(root / "check_inputs.py")], cwd=root).returncode)
     if args.fresh:
         clear_final_results()
     ensure_result_dirs()
-    root = Path(__file__).resolve().parent
     for command in COMMANDS:
         script, *arguments = command
         label = " ".join(command)

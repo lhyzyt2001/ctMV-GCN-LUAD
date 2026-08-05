@@ -1,0 +1,12 @@
+logical_path	bytes	sha256	source_or_accession	retrieval_or_export_date	redistributed
+data/core/scRNA_multichannel_features_TISCH.csv	4360448	d9e6398e0412f3fc25be7976097602fbcb148481041d2f09a97f7f8cd6283426	TISCH/GEO GSE131907	frozen study input	no; equivalent packaged snapshot included
+results/01_data/celltype_expression_features.csv	4360451	2772f10ef57b6bfcbb9d650d76f853b7b3932c0fea1c71baac467f4fd2e56c8a	TISCH/GEO GSE131907	frozen study input	yes; UTF-8-BOM form of the input above
+data/core/9606.protein.info.v12.0.txt/9606.protein.info.v12.0.txt	6257901	a65e52748022d6a8e953843645a5032b094017225d95de9c6cb6fd4577d0a7ad	STRING v12.0 human taxon 9606	frozen study input	no
+data/core/9606.protein.links.v12.0.txt/9606.protein.links.v12.0.txt	630908617	b83b0304f72455c82a05294713e4e2c6ad38338281b07f433da14d69943c6483	STRING v12.0 human taxon 9606	frozen study input	no
+data/core/c2.cp.kegg_medicus.v2026.1.Hs.symbols.gmt	177277	e257052d604cb2f386f8372b3fb9b494095688ac8ae0d72ba947cc00f5628cb1	MSigDB v2026.1 KEGG Medicus	frozen study input	no
+data/core/OT-EFO_0000571-associated-targets-2026_3_23-v0_0.tsv	3196478	f5c62d804acc7887d2a473358130373035bceb426df873e1bb3d07117748250b	Open Targets EFO_0000571	2026-03-23	no; processed labels and audit included
+data/core/TCGA.LUAD.sampleMap_HiSeqV2/HiSeqV2	85413141	64421a30147a689571f4cc537eb484b294e4325807e2b83031e7d918e07fe83c	UCSC Xena TCGA-LUAD HiSeqV2	frozen study input	no
+data/core/TCGA.LUAD.sampleMap_LUAD_clinicalMatrix	710194	0e7a7fa7773a44326d2270160201b059c50c8a0c75359359a8639772497db59a	UCSC Xena TCGA-LUAD clinical matrix	frozen study input	no
+data/external_validation/GSE68465_series_matrix.txt.gz	36648454	f4a74ef436302e016029df8cea8e01a1a36c98d087501c78668e05727d38bdbf	NCBI GEO GSE68465	frozen study input	no
+data/external_validation/GPL96.annot.gz	4522748	88e0b22362bac779eb220b3b185c80faa6510a92b9358eaad159a561ab4351c4	NCBI GEO GPL96	frozen study input	no
+data/external_validation/DepMap_Public_26Q1_LUAD_top20_CRISPR.csv	408924	9337a5e5b2bbb5bd275a19de1216e208a7f8ed9ef566bf43b17875aa809bbb7c	DepMap Public 26Q1 custom download	2026-07-21	no

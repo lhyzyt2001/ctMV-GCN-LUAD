@@ -1,14 +1,17 @@
 {
   "release_date": "2026-08-05",
   "result_root_name": "results_final",
-  "generation": "Generated from an initially empty result directory by the final pipeline stages.",
+  "generation": "The full local results_final directory was generated from an initially empty result directory. This repository contains the publication-level subset described below.",
   "candidate_set": "Post hoc robustness-aware top 20 used consistently across TCGA, GSE68465, CPTAC and DepMap analyses.",
   "evaluation_design": "Transductive repeated 5-fold outer cross-validation with 3 repeats; outer-test labels hidden while all nodes and disease-independent topology remain visible.",
   "matched_auprc_rule": "The 1:1 degree-matched cohort has prevalence 0.5 and random AUPRC 0.5; only within-matched-cohort method contrasts are interpreted.",
   "cptac_claim_boundary": "Tumor protein profile values use a study-specific zero reference and are not paired tumor-normal measurements.",
   "figures": {
-    "png_files": 43,
-    "vector_pdf_files": 43,
+    "repository_png_files": 20,
+    "repository_vector_pdf_files": 17,
+    "repository_editable_svg_files": 1,
+    "full_local_results_final_png_files": 43,
+    "full_local_results_final_vector_pdf_files": 43,
     "workflow_png_dpi": 600,
     "workflow_tiff_dpi": 600,
     "workflow_editable_svg": true,
@@ -23,7 +26,6 @@
   "primary_reference_files": [
     "02_benchmark/benchmark_summary.csv",
     "00_workflow/Figure_1_scTDA_GCN_framework_schematic.pdf",
-    "00_workflow/Figure_1_scTDA_GCN_workflow.pdf",
     "02_benchmark/benchmark_design.json",
     "08_robustness/degree_matched_bootstrap_metrics.csv",
     "08_robustness/degree_matched_auprc_comparisons.csv",

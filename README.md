@@ -2,6 +2,7 @@
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
+[![Release: v1.0.0](https://img.shields.io/badge/release-v1.0.0-5c6bc0.svg)](https://github.com/lhyzyt2001/scTDA-GCN-LUAD/releases/tag/v1.0.0)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -54,6 +55,7 @@ The legacy `PPI-*` labels in output tables refer to the STRING functional-associ
 ├── README.md
 ├── CITATION.cff
 ├── LICENSE
+├── .zenodo.json
 ├── data/
 │   └── README.md                 # required raw-input layout and download sources
 ├── docs/
@@ -76,6 +78,7 @@ The legacy `PPI-*` labels in output tables refer to the STRING functional-associ
     ├── config.py
     ├── config.local.example.json
     ├── requirements.txt
+    ├── check_inputs.py
     └── run_all.py
 ```
 
@@ -84,6 +87,8 @@ Raw third-party data, patient-level working tables, trained weights and intermed
 ## Installation
 
 Python 3.11 is recommended.
+
+The manuscript release was executed and validated with Python 3.11.3, PyTorch 2.6.0 (CPU build) and Windows 11 build 26200. Exact Python package versions are pinned in `src/requirements.txt`. A GPU is optional; PyTorch/PyTorch Geometric wheels must match the local operating system and CUDA runtime when CUDA is used.
 
 ```bash
 git clone https://github.com/lhyzyt2001/scTDA-GCN-LUAD.git
@@ -102,9 +107,11 @@ PyTorch and PyTorch Geometric installation can depend on the operating system, C
 
 ## Input data
 
-Download the source datasets described in [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) and place them under `data/core` and `data/external_validation` using the filenames in [data/README.md](data/README.md).
+Download the source datasets described in [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) and place them under `data/core` and `data/external_validation` using the filenames in [data/README.md](data/README.md). Exact byte counts and SHA-256 digests for the study snapshots are provided in [docs/INPUT_CHECKSUMS.tsv](docs/INPUT_CHECKSUMS.tsv).
 
 No source dataset is silently downloaded by `run_all.py`. This keeps the analysis auditable and avoids redistributing third-party data under incompatible terms.
+
+The frozen TISCH-derived 15-cell-type feature matrix and the processed Open Targets label/audit snapshots are included under `results/01_data`. The pipeline uses these packaged snapshots when the corresponding manually prepared source files are absent; all other third-party inputs remain subject to their source access terms.
 
 ## Configuration
 
@@ -126,6 +133,14 @@ The example configuration points to:
 ```
 
 `config.local.json` is ignored by Git because it may contain local paths. The same locations can be set with `SCTDA_DATA_ROOT`, `SCTDA_SOURCE_ROOT`, `SCTDA_EXTERNAL_DATA_ROOT`, `SCTDA_RESULT_ROOT` and `SCTDA_CONFIG`.
+
+Before starting the full analysis, validate the input layout and frozen checksums from the repository root:
+
+```bash
+python src/run_all.py --check-inputs
+```
+
+The check exits non-zero and identifies every absent or mismatched input. It accepts either the original TISCH/Open Targets inputs or their frozen packaged fallbacks.
 
 ## Reproduce the full pipeline
 
@@ -196,7 +211,7 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 
 ## Citation
 
-Until the manuscript receives a DOI, cite the repository using [`CITATION.cff`](CITATION.cff). The citation metadata can be updated after acceptance and archival in Zenodo.
+The manuscript version is tagged as `v1.0.0`. Cite the permanent Zenodo archive DOI recorded in [`CITATION.cff`](CITATION.cff) once the GitHub release has been archived. The repository includes [`.zenodo.json`](.zenodo.json) so authorship, title, version, license and keywords are transferred consistently to Zenodo. The GitHub URL identifies ongoing development; the Zenodo DOI identifies the immutable manuscript release.
 
 ## License
 
@@ -205,4 +220,3 @@ Source code is released under the [MIT License](LICENSE). The derived tables and
 ## Contact
 
 Corresponding author: Jihua Feng, `fengjihua@ymu.edu.cn`
-
