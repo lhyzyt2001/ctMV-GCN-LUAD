@@ -19,4 +19,4 @@ This nomenclature-only release adopts the descriptive model name **ctMV-GCN** (c
 - all reported performance, robustness and external-characterization values;
 - interpretation boundaries and negative results.
 
-The previous v1.0.0 archive remains available at https://doi.org/10.5281/zenodo.21805985. Zenodo assigns a new version-specific DOI when v1.0.1 is published.
+The immutable v1.0.1 archive is available at https://doi.org/10.5281/zenodo.21807929. The previous v1.0.0 archive remains available at https://doi.org/10.5281/zenodo.21805985.

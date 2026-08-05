@@ -3,7 +3,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
 [![Release: v1.0.1](https://img.shields.io/badge/release-v1.0.1-5c6bc0.svg)](https://github.com/lhyzyt2001/scTDA-GCN-LUAD/releases/tag/v1.0.1)
-[![Archived v1.0.0 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21805985.svg)](https://doi.org/10.5281/zenodo.21805985)
+[![DOI: v1.0.1](https://zenodo.org/badge/DOI/10.5281/zenodo.21807929.svg)](https://doi.org/10.5281/zenodo.21807929)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -214,7 +214,7 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 
 ## Citation
 
-Version `v1.0.1` standardizes the descriptive model name as ctMV-GCN and corrects the loss label to class-weighted cross-entropy; no numerical result or experimental design changed. The earlier `v1.0.0` archive, which used the former internal identifier, remains permanently available at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985). The version-specific DOI for `v1.0.1` will be added to [`CITATION.cff`](CITATION.cff) after Zenodo archives the GitHub release.
+Version `v1.0.1` standardizes the descriptive model name as ctMV-GCN and corrects the loss label to class-weighted cross-entropy; no numerical result or experimental design changed. The immutable manuscript release is archived at [https://doi.org/10.5281/zenodo.21807929](https://doi.org/10.5281/zenodo.21807929). The earlier `v1.0.0` archive, which used the former internal identifier, remains permanently available at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985).
 
 ## License
 
