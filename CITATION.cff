@@ -6,7 +6,7 @@ version: 1.0.1
 date-released: 2026-08-05
 doi: "10.5281/zenodo.21807929"
 url: "https://doi.org/10.5281/zenodo.21807929"
-repository-code: "https://github.com/lhyzyt2001/scTDA-GCN-LUAD"
+repository-code: "https://github.com/lhyzyt2001/ctMV-GCN-LUAD"
 license: MIT
 identifiers:
   - type: doi

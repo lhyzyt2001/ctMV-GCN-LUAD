@@ -2,7 +2,7 @@
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
-[![Release: v1.0.1](https://img.shields.io/badge/release-v1.0.1-5c6bc0.svg)](https://github.com/lhyzyt2001/scTDA-GCN-LUAD/releases/tag/v1.0.1)
+[![Release: v1.0.1](https://img.shields.io/badge/release-v1.0.1-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.1)
 [![DOI: v1.0.1](https://zenodo.org/badge/DOI/10.5281/zenodo.21807929.svg)](https://doi.org/10.5281/zenodo.21807929)
 
 This repository contains the analysis code and publication-level derived results for:
@@ -10,8 +10,6 @@ This repository contains the analysis code and publication-level derived results
 > **ctMV-GCN: cell-type-informed multiview graph convolution for lung adenocarcinoma gene prioritization—a transductive computational study**
 
 ctMV-GCN denotes a **cell-type-informed multiview graph convolutional network**. It integrates cell-type-resolved lung adenocarcinoma (LUAD) expression features with three disease-independent gene-network views:
-
-The historical repository slug `scTDA-GCN-LUAD` is retained to preserve existing links and the v1.0.0 archive; **ctMV-GCN is the official model name from v1.0.1 onward**.
 
 1. high-confidence STRING functional associations;
 2. similarity of 15 TISCH cell-type expression profiles; and
@@ -94,8 +92,8 @@ Python 3.11 is recommended.
 The manuscript release was executed and validated with Python 3.11.3, PyTorch 2.6.0 (CPU build) and Windows 11 build 26200. Exact Python package versions are pinned in `src/requirements.txt`. A GPU is optional; PyTorch/PyTorch Geometric wheels must match the local operating system and CUDA runtime when CUDA is used.
 
 ```bash
-git clone https://github.com/lhyzyt2001/scTDA-GCN-LUAD.git
-cd scTDA-GCN-LUAD
+git clone https://github.com/lhyzyt2001/ctMV-GCN-LUAD.git
+cd ctMV-GCN-LUAD
 python -m venv .venv
 ```
 

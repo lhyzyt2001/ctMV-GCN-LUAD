@@ -22,7 +22,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/lhyzyt2001/scTDA-GCN-LUAD",
+      "identifier": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD",
       "relation": "isSupplementTo",
       "scheme": "url"
     }
