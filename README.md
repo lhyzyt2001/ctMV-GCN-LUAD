@@ -3,6 +3,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
 [![Release: v1.0.0](https://img.shields.io/badge/release-v1.0.0-5c6bc0.svg)](https://github.com/lhyzyt2001/scTDA-GCN-LUAD/releases/tag/v1.0.0)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21805985.svg)](https://doi.org/10.5281/zenodo.21805985)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -211,7 +212,7 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 
 ## Citation
 
-The manuscript version is tagged as `v1.0.0`. Cite the permanent Zenodo archive DOI recorded in [`CITATION.cff`](CITATION.cff) once the GitHub release has been archived. The repository includes [`.zenodo.json`](.zenodo.json) so authorship, title, version, license and keywords are transferred consistently to Zenodo. The GitHub URL identifies ongoing development; the Zenodo DOI identifies the immutable manuscript release.
+The manuscript version is tagged as `v1.0.0` and archived permanently in Zenodo at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985). Citation metadata are provided in [`CITATION.cff`](CITATION.cff). The GitHub URL identifies ongoing development; the version DOI identifies the immutable release used for the manuscript.
 
 ## License
 

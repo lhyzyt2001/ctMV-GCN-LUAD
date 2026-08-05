@@ -4,9 +4,14 @@ title: "scTDA-GCN: multiview graph learning for lung adenocarcinoma gene priorit
 type: software
 version: 1.0.0
 date-released: 2026-08-05
-url: "https://github.com/lhyzyt2001/scTDA-GCN-LUAD"
+doi: "10.5281/zenodo.21805985"
+url: "https://doi.org/10.5281/zenodo.21805985"
 repository-code: "https://github.com/lhyzyt2001/scTDA-GCN-LUAD"
 license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21805985"
+    description: "Permanent archive of the v1.0.0 manuscript release"
 authors:
   - family-names: Zhang
     given-names: Yuting
@@ -24,4 +29,3 @@ keywords:
   - gene prioritization
   - single-cell transcriptomics
   - network degree
-

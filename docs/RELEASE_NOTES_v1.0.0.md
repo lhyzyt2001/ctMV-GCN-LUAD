@@ -2,6 +2,8 @@
 
 This is the reproducible manuscript release.
 
+Permanent archive: https://doi.org/10.5281/zenodo.21805985
+
 ## Included
 
 - all custom Python source files used for the reported analyses;
