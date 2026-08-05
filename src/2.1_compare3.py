@@ -40,12 +40,12 @@ from models import MultiViewGCN, PpiGAT, PpiGCN, PpiGraphSAGE
 from plot_style import FULL_WIDTH, apply_bmc_style, save_figure
 
 
-PROPOSED = "scTDA-GCN (local attention + weighted BCE)"
+PROPOSED = "ctMV-GCN (local attention + class-weighted CE)"
 DISPLAY_NAMES = {
-    PROPOSED: "Local attention + weighted BCE",
-    "scTDA-GCN (local attention + nnPU)": "Local attention + nnPU",
-    "scTDA-GCN (dual attention + nnPU)": "Dual attention + nnPU",
-    "scTDA-GCN (equal fusion + nnPU)": "Equal fusion + nnPU",
+    PROPOSED: "ctMV-GCN (primary)",
+    "ctMV-GCN (local attention + nnPU)": "ctMV-GCN (local attention + nnPU)",
+    "ctMV-GCN (dual attention + nnPU)": "ctMV-GCN (dual attention + nnPU)",
+    "ctMV-GCN (equal fusion + nnPU)": "ctMV-GCN (equal fusion + nnPU)",
     "PPI-GCN + nnPU": "PPI-GCN + nnPU",
     "PPI-GraphSAGE + nnPU": "PPI-GraphSAGE + nnPU",
     "PPI-GAT + nnPU": "PPI-GAT + nnPU",
@@ -67,8 +67,8 @@ def write_benchmark_design() -> None:
     }, indent=2), encoding="utf-8")
 METHODS = {
     PROPOSED: (MultiViewGCN, {"attention_type": "local"}, False),
-    "scTDA-GCN (dual attention + nnPU)": (MultiViewGCN, {"attention_type": "dual"}, True),
-    "scTDA-GCN (equal fusion + nnPU)": (MultiViewGCN, {"attention_type": "equal"}, True),
+    "ctMV-GCN (dual attention + nnPU)": (MultiViewGCN, {"attention_type": "dual"}, True),
+    "ctMV-GCN (equal fusion + nnPU)": (MultiViewGCN, {"attention_type": "equal"}, True),
     "PPI-GCN + nnPU": (PpiGCN, {}, True),
     "PPI-GraphSAGE + nnPU": (PpiGraphSAGE, {}, True),
     "PPI-GAT + nnPU": (PpiGAT, {}, True),
@@ -167,8 +167,15 @@ def make_curves(oof: pd.DataFrame, labels: np.ndarray, methods: list[str], outpu
         roc_auc = roc_auc_score(y, score)
         auprc = average_precision_score(y, score)
         label = f"{DISPLAY_NAMES.get(method, method)} [{roc_auc:.3f} | {auprc:.3f}]"
-        axes[0].plot(fpr, tpr, color=color, label=label)
-        axes[1].plot(recall, precision, color=color, label=label)
+        is_primary = method == PROPOSED
+        line_kwargs = {
+            "color": color,
+            "label": label,
+            "linewidth": 1.6 if is_primary else 1.05,
+            "zorder": 3 if is_primary else 2,
+        }
+        axes[0].plot(fpr, tpr, **line_kwargs)
+        axes[1].plot(recall, precision, **line_kwargs)
     prevalence = float(labels.mean())
     baseline_label = f"Random baseline [0.500 | {prevalence:.3f}]"
     axes[0].plot([0, 1], [0, 1], color="0.5", linestyle="--", label=baseline_label)
@@ -191,11 +198,11 @@ def regenerate_figures() -> None:
     oof = pd.read_csv(BENCHMARK_DIR / "oof_predictions.csv.gz")
     main_methods = ["RWR (STRING graph)", "Network-degree logistic", PROPOSED, "PPI-GraphSAGE + nnPU", "PPI-GAT + nnPU", "PPI-GCN + nnPU", "Logistic regression", "Random forest"]
     make_curves(oof, labels, main_methods, "benchmark_curves")
-    ablation_methods = [PROPOSED, "scTDA-GCN (dual attention + nnPU)", "scTDA-GCN (equal fusion + nnPU)", "PPI-GCN + nnPU"]
+    ablation_methods = [PROPOSED, "ctMV-GCN (dual attention + nnPU)", "ctMV-GCN (equal fusion + nnPU)", "PPI-GCN + nnPU"]
     make_curves(oof, labels, ablation_methods, "ablation_curves")
     (BENCHMARK_DIR / "figure_scope.txt").write_text(
         "benchmark_curves contains the complete strong-baseline comparison, including RWR. "
-        "ablation_curves contains only GNN variants that were evaluated in the same OOF design. "
+        "ablation_curves contains only ctMV-GCN variants and the PPI-GCN ablation evaluated in the same OOF design. "
         "It must not be described as a complete benchmark. Legend values report ROC-AUC and AUPRC.\n",
         encoding="utf-8",
     )

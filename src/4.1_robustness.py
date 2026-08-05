@@ -30,10 +30,10 @@ from models import MultiViewGCN
 from plot_style import FULL_WIDTH, apply_bmc_style, save_figure
 
 
-PROPOSED = "scTDA-GCN (local attention + weighted BCE)"
+PROPOSED = "ctMV-GCN (local attention + class-weighted CE)"
 COMPARATORS = [PROPOSED, "Network-degree logistic", "RWR (STRING graph)"]
 DISPLAY = {
-    PROPOSED: "GNN",
+    PROPOSED: "ctMV-GCN",
     "Network-degree logistic": "Degree logistic",
     "RWR (STRING graph)": "RWR",
 }
@@ -239,7 +239,7 @@ def topology_robustness(labels: np.ndarray) -> pd.DataFrame:
     data = torch_load(MODEL_DIR / "GNN_Dataset_Final.pt")
     model = MultiViewGCN(in_channels=data.x.shape[1], attention_type="local")
     seed = FINAL_ENSEMBLE_SEEDS[0]
-    model.load_state_dict(torch.load(MODEL_DIR / f"scTDA_GCN_local_weightedBCE_seed{seed}.pth", map_location="cpu", weights_only=True))
+    model.load_state_dict(torch.load(MODEL_DIR / f"ctMV_GCN_local_weightedCE_seed{seed}.pth", map_location="cpu", weights_only=True))
     model.eval()
     with torch.no_grad():
         baseline = F.softmax(model(data), dim=1)[:, 1].cpu().numpy()
@@ -381,7 +381,7 @@ def make_figures(stratified: pd.DataFrame, topology: pd.DataFrame, top20: pd.Dat
     plot = top20.sort_values("Robustness_Score")
     fig, ax = plt.subplots(figsize=(FULL_WIDTH * 0.72, 4.2))
     ax.barh(plot["Gene_Symbol"], plot["Robustness_Score"], color="#0072B2")
-    ax.set(xlabel="Robustness score", ylabel="", title="Robust GNN candidate shortlist")
+    ax.set(xlabel="Robustness score", ylabel="", title="Robust ctMV-GCN candidate shortlist")
     ax.grid(axis="x", color="0.9", linewidth=0.5)
     fig.tight_layout()
     save_figure(fig, ROBUSTNESS_DIR / "robust_top20_candidates")

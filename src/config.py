@@ -6,15 +6,19 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent
 REPOSITORY_ROOT = PROJECT_ROOT.parent
 PACKAGED_RESULTS_ROOT = REPOSITORY_ROOT / "results"
-LOCAL_CONFIG_FILE = Path(os.environ.get("SCTDA_CONFIG", PROJECT_ROOT / "config.local.json"))
+LOCAL_CONFIG_FILE = Path(os.environ.get("CTMV_CONFIG", os.environ.get("SCTDA_CONFIG", PROJECT_ROOT / "config.local.json")))
 if LOCAL_CONFIG_FILE.exists():
     LOCAL_CONFIG = json.loads(LOCAL_CONFIG_FILE.read_text(encoding="utf-8"))
 else:
     LOCAL_CONFIG = {}
 
 
-def configured_path(key: str, environment_variable: str, default: Path) -> Path:
-    value = os.environ.get(environment_variable, LOCAL_CONFIG.get(key))
+def configured_path(key: str, environment_variable: str, default: Path, legacy_environment_variable: str | None = None) -> Path:
+    value = os.environ.get(environment_variable)
+    if value is None and legacy_environment_variable:
+        value = os.environ.get(legacy_environment_variable)
+    if value is None:
+        value = LOCAL_CONFIG.get(key)
     if not value:
         return default.resolve()
     path = Path(value).expanduser()
@@ -23,12 +27,13 @@ def configured_path(key: str, environment_variable: str, default: Path) -> Path:
     return path.resolve()
 
 
-DATA_ROOT = configured_path("data_root", "SCTDA_DATA_ROOT", REPOSITORY_ROOT / "data" / "core")
-SOURCE_ROOT = configured_path("source_root", "SCTDA_SOURCE_ROOT", DATA_ROOT)
-RESULT_ROOT = configured_path("result_root", "SCTDA_RESULT_ROOT", REPOSITORY_ROOT / "results_final")
+DATA_ROOT = configured_path("data_root", "CTMV_DATA_ROOT", REPOSITORY_ROOT / "data" / "core", "SCTDA_DATA_ROOT")
+SOURCE_ROOT = configured_path("source_root", "CTMV_SOURCE_ROOT", DATA_ROOT, "SCTDA_SOURCE_ROOT")
+RESULT_ROOT = configured_path("result_root", "CTMV_RESULT_ROOT", REPOSITORY_ROOT / "results_final", "SCTDA_RESULT_ROOT")
 EXTERNAL_DATA_ROOT = configured_path(
-    "external_data_root", "SCTDA_EXTERNAL_DATA_ROOT",
+    "external_data_root", "CTMV_EXTERNAL_DATA_ROOT",
     REPOSITORY_ROOT / "data" / "external_validation",
+    "SCTDA_EXTERNAL_DATA_ROOT",
 )
 
 DATA_DIR = RESULT_ROOT / "01_data"
@@ -57,16 +62,19 @@ PACKAGED_LABEL_AUDIT_FILE = PACKAGED_RESULTS_ROOT / "01_data" / "open_targets_la
 TCGA_EXPRESSION_FILE = DATA_ROOT / "TCGA.LUAD.sampleMap_HiSeqV2" / "HiSeqV2"
 TCGA_CLINICAL_FILE = DATA_ROOT / "TCGA.LUAD.sampleMap_LUAD_clinicalMatrix"
 DEPMAP_GENE_EFFECT_FILE = configured_path(
-    "depmap_gene_effect_file", "SCTDA_DEPMAP_GENE_EFFECT_FILE",
+    "depmap_gene_effect_file", "CTMV_DEPMAP_GENE_EFFECT_FILE",
     DATA_ROOT / "DepMap_Public_26Q1_CRISPRGeneEffect.csv",
+    "SCTDA_DEPMAP_GENE_EFFECT_FILE",
 )
 DEPMAP_MODEL_FILE = configured_path(
-    "depmap_model_file", "SCTDA_DEPMAP_MODEL_FILE",
+    "depmap_model_file", "CTMV_DEPMAP_MODEL_FILE",
     DATA_ROOT / "DepMap_Public_26Q1_Model.csv",
+    "SCTDA_DEPMAP_MODEL_FILE",
 )
 DEPMAP_CUSTOM_FILE = configured_path(
-    "depmap_custom_file", "SCTDA_DEPMAP_CUSTOM_FILE",
+    "depmap_custom_file", "CTMV_DEPMAP_CUSTOM_FILE",
     EXTERNAL_DATA_ROOT / "DepMap_Public_26Q1_LUAD_top20_CRISPR.csv",
+    "SCTDA_DEPMAP_CUSTOM_FILE",
 )
 
 NODE_MAPPING_FILE = DATA_DIR / "node_mapping.json"

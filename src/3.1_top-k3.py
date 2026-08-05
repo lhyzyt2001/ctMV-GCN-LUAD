@@ -52,7 +52,7 @@ def main() -> None:
     preferred = [
         "RWR (STRING graph)",
         "Network-degree logistic",
-        "scTDA-GCN (local attention + weighted BCE)",
+        "ctMV-GCN (local attention + class-weighted CE)",
         "PPI-GraphSAGE + nnPU",
         "PPI-GAT + nnPU",
         "PPI-GCN + nnPU",

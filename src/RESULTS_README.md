@@ -11,7 +11,7 @@
 
 - RWR remained the strongest benchmark (ROC-AUC 0.933 +/- 0.006; AUPRC 0.439 +/- 0.032).
 - The network-degree logistic baseline also exceeded the GNN (ROC-AUC 0.888 +/- 0.008; AUPRC 0.318 +/- 0.021).
-- The best GNN was local multiview attention with weighted BCE (ROC-AUC 0.851 +/- 0.015; AUPRC 0.215 +/- 0.033).
+- The primary ctMV-GCN configuration used local multiview attention with class-weighted CE (ROC-AUC 0.851 +/- 0.015; AUPRC 0.215 +/- 0.033).
 - Therefore, the manuscript must not claim that the GNN is the best overall predictor. The complete benchmark, including RWR and degree, should be reported; the GNN-only ablation figure may be used to explain the architecture.
 - Because all methods are evaluated on the assembled graph, these numbers support within-graph prioritization only.
 

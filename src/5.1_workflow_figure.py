@@ -11,7 +11,7 @@ from config import RESULT_ROOT
 
 
 OUT_DIR = RESULT_ROOT / "00_workflow"
-FIGURE_BASENAME = "Figure_1_scTDA_GCN_workflow"
+FIGURE_BASENAME = "Figure_1_ctMV_GCN_workflow"
 
 BLUE = "#0072B2"
 SKY = "#56B4E9"
@@ -134,7 +134,7 @@ def make_figure() -> plt.Figure:
 
     ax.text(
         6.5, 12.94,
-        "Robustness-aware multiview GNN workflow for LUAD gene prioritization",
+        "Robustness-aware ctMV-GCN workflow for LUAD gene prioritization",
         ha="center", va="center", fontsize=10.0, fontweight="bold", color=DARK,
     )
 
@@ -174,7 +174,7 @@ def make_figure() -> plt.Figure:
         arrow(ax, (x + 1.45, derived_y - 0.02), (6.5, 9.68), color=color, width=0.7, mutation=6)
 
     # B. Model architecture
-    section_label(ax, 8.70, "B", "Primary scTDA-GCN architecture", GREEN, 3.90)
+    section_label(ax, 8.70, "B", "Primary ctMV-GCN architecture", GREEN, 3.90)
     arrow(ax, (6.5, 9.18), (6.5, 8.46), color=GREEN, width=1.1, mutation=9)
     model_y, model_h = 5.78, 2.58
     ax.add_patch(FancyBboxPatch(

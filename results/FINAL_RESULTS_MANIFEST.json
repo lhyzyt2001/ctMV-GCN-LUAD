@@ -11,6 +11,7 @@
     "repository_vector_pdf_files": 17,
     "repository_editable_svg_files": 1,
     "full_local_results_final_png_files": 43,
+    "full_local_results_final_manuscript_composite_png_files": 4,
     "full_local_results_final_vector_pdf_files": 43,
     "workflow_png_dpi": 600,
     "workflow_tiff_dpi": 600,
@@ -25,7 +26,7 @@
   },
   "primary_reference_files": [
     "02_benchmark/benchmark_summary.csv",
-    "00_workflow/Figure_1_scTDA_GCN_framework_schematic.pdf",
+    "00_workflow/Figure_1_ctMV_GCN_framework_schematic.pdf",
     "02_benchmark/benchmark_design.json",
     "08_robustness/degree_matched_bootstrap_metrics.csv",
     "08_robustness/degree_matched_auprc_comparisons.csv",

@@ -1,7 +1,7 @@
 {
-  "title": "scTDA-GCN: multiview graph learning for lung adenocarcinoma gene prioritization",
+  "title": "ctMV-GCN: cell-type-informed multiview graph learning for lung adenocarcinoma gene prioritization",
   "upload_type": "software",
-  "description": "Reproducible source code, configuration metadata and publication-level derived results for a transductive multiview graph analysis of lung adenocarcinoma-associated genes.",
+  "description": "Reproducible source code, configuration metadata and publication-level derived results for ctMV-GCN, a cell-type-informed transductive multiview graph analysis of lung adenocarcinoma-associated genes.",
   "creators": [
     {"name": "Zhang, Yuting"},
     {"name": "Feng, Jihua"},
@@ -11,7 +11,7 @@
   ],
   "access_right": "open",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publication_date": "2026-08-05",
   "keywords": [
     "lung adenocarcinoma",

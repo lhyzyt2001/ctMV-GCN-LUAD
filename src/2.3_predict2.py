@@ -28,7 +28,7 @@ def main() -> None:
     score_runs, attention_runs, perturbation_runs = [], [], []
     for seed in FINAL_ENSEMBLE_SEEDS:
         model = MultiViewGCN(in_channels=data.x.shape[1], attention_type="local")
-        model.load_state_dict(torch.load(MODEL_DIR / f"scTDA_GCN_local_weightedBCE_seed{seed}.pth", map_location="cpu", weights_only=True))
+        model.load_state_dict(torch.load(MODEL_DIR / f"ctMV_GCN_local_weightedCE_seed{seed}.pth", map_location="cpu", weights_only=True))
         model.eval()
         with torch.no_grad():
             logits, attention = model(data, return_attention=True)

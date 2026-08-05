@@ -1,15 +1,17 @@
-# scTDA-GCN: multiview graph learning for LUAD gene prioritization
+# ctMV-GCN: cell-type-informed multiview graph learning for LUAD gene prioritization
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
-[![Release: v1.0.0](https://img.shields.io/badge/release-v1.0.0-5c6bc0.svg)](https://github.com/lhyzyt2001/scTDA-GCN-LUAD/releases/tag/v1.0.0)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21805985.svg)](https://doi.org/10.5281/zenodo.21805985)
+[![Release: v1.0.1](https://img.shields.io/badge/release-v1.0.1-5c6bc0.svg)](https://github.com/lhyzyt2001/scTDA-GCN-LUAD/releases/tag/v1.0.1)
+[![Archived v1.0.0 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21805985.svg)](https://doi.org/10.5281/zenodo.21805985)
 
 This repository contains the analysis code and publication-level derived results for:
 
-> **Multiview graph convolution integrating cell-type-resolved transcriptomic features for lung adenocarcinoma gene prioritization: a transductive computational study**
+> **ctMV-GCN: cell-type-informed multiview graph convolution for lung adenocarcinoma gene prioritization—a transductive computational study**
 
-scTDA-GCN integrates cell-type-resolved lung adenocarcinoma (LUAD) expression features with three disease-independent gene-network views:
+ctMV-GCN denotes a **cell-type-informed multiview graph convolutional network**. It integrates cell-type-resolved lung adenocarcinoma (LUAD) expression features with three disease-independent gene-network views:
+
+The historical repository slug `scTDA-GCN-LUAD` is retained to preserve existing links and the v1.0.0 archive; **ctMV-GCN is the official model name from v1.0.1 onward**.
 
 1. high-confidence STRING functional associations;
 2. similarity of 15 TISCH cell-type expression profiles; and
@@ -17,7 +19,7 @@ scTDA-GCN integrates cell-type-resolved lung adenocarcinoma (LUAD) expression fe
 
 Each view is encoded by a two-layer graph convolutional branch. Node-specific local attention combines the three embeddings, and a class-weighted two-class cross-entropy loss predicts whether a gene has LUAD clinical-stage evidence in Open Targets.
 
-![Framework overview](results/00_workflow/Figure_1_scTDA_GCN_framework_schematic.png)
+![Framework overview](results/00_workflow/Figure_1_ctMV_GCN_framework_schematic.png)
 
 ## Important interpretation
 
@@ -30,7 +32,7 @@ This repository retains all strong comparators and negative validation results.
 - External survival associations do not replicate after false-discovery-rate correction.
 - No robustness-aware candidate meets the prespecified DepMap LUAD functional-dependency rule.
 
-The defensible use of scTDA-GCN is therefore transparent computational prioritization and hypothesis generation, not proof of therapeutic efficacy.
+The defensible use of ctMV-GCN is therefore transparent computational prioritization and hypothesis generation, not proof of therapeutic efficacy.
 
 ## Primary results
 
@@ -40,7 +42,7 @@ The graph contains 25,242 genes, including 1,184 Open Targets-positive genes (4.
 |---|---:|---:|
 | RWR on STRING | 0.933 ± 0.006 | 0.439 ± 0.032 |
 | Network-degree logistic | 0.888 ± 0.008 | 0.318 ± 0.021 |
-| scTDA-GCN, local attention + class-weighted CE | 0.851 ± 0.015 | 0.215 ± 0.033 |
+| ctMV-GCN, local attention + class-weighted CE | 0.851 ± 0.015 | 0.215 ± 0.033 |
 | PPI-GraphSAGE + nnPU | 0.761 ± 0.029 | 0.155 ± 0.021 |
 | Random forest | 0.706 ± 0.016 | 0.122 ± 0.011 |
 | Logistic regression | 0.653 ± 0.021 | 0.110 ± 0.011 |
@@ -133,7 +135,7 @@ The example configuration points to:
 }
 ```
 
-`config.local.json` is ignored by Git because it may contain local paths. The same locations can be set with `SCTDA_DATA_ROOT`, `SCTDA_SOURCE_ROOT`, `SCTDA_EXTERNAL_DATA_ROOT`, `SCTDA_RESULT_ROOT` and `SCTDA_CONFIG`.
+`config.local.json` is ignored by Git because it may contain local paths. The same locations can be set with `CTMV_DATA_ROOT`, `CTMV_SOURCE_ROOT`, `CTMV_EXTERNAL_DATA_ROOT`, `CTMV_RESULT_ROOT` and `CTMV_CONFIG`. The former `SCTDA_*` variables remain accepted as backward-compatible aliases.
 
 Before starting the full analysis, validate the input layout and frozen checksums from the repository root:
 
@@ -212,7 +214,7 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 
 ## Citation
 
-The manuscript version is tagged as `v1.0.0` and archived permanently in Zenodo at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985). Citation metadata are provided in [`CITATION.cff`](CITATION.cff). The GitHub URL identifies ongoing development; the version DOI identifies the immutable release used for the manuscript.
+Version `v1.0.1` standardizes the descriptive model name as ctMV-GCN and corrects the loss label to class-weighted cross-entropy; no numerical result or experimental design changed. The earlier `v1.0.0` archive, which used the former internal identifier, remains permanently available at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985). The version-specific DOI for `v1.0.1` will be added to [`CITATION.cff`](CITATION.cff) after Zenodo archives the GitHub release.
 
 ## License
 

@@ -217,7 +217,7 @@ def view_degree_bias(candidates: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFra
         ax.set(title=view, xlabel="log(1 + degree)")
         ax.text(0.04, 0.05, f"Spearman rho={result.Spearman_Rho_Score_vs_LogDegree:.2f}", transform=ax.transAxes, fontsize=6)
         ax.grid(color="0.92", linewidth=0.4)
-    axes[0].set_ylabel("GNN prediction score")
+    axes[0].set_ylabel("ctMV-GCN prediction score")
     fig.suptitle("Network-degree bias assessment", y=1.01, fontsize=9)
     fig.tight_layout()
     save_figure(fig, VALIDATION_DIR / "network_degree_bias")

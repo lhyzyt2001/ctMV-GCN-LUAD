@@ -65,7 +65,7 @@ def main() -> None:
     fold_file = BENCHMARK_DIR / "fold_metrics.csv"
     if fold_file.exists():
         folds = pd.read_csv(fold_file)
-        selected = folds[folds["method"] == "scTDA-GCN (local attention + weighted BCE)"]
+        selected = folds[folds["method"] == "ctMV-GCN (local attention + class-weighted CE)"]
         training_epochs = int(max(10, round(selected["epochs"].median())))
     else:
         training_epochs = 40
@@ -78,7 +78,7 @@ def main() -> None:
         model.eval()
         with torch.no_grad():
             _, attention = model(data, return_attention=True)
-        model_path = MODEL_DIR / f"scTDA_GCN_local_weightedBCE_seed{seed}.pth"
+        model_path = MODEL_DIR / f"ctMV_GCN_local_weightedCE_seed{seed}.pth"
         torch.save(model.state_dict(), model_path)
         mean = attention.mean(dim=0).cpu().numpy()
         rows.append({"seed": seed, "epochs": training_epochs, "PPI": mean[0], "CellTypeSimilarity": mean[1], "Pathway": mean[2]})

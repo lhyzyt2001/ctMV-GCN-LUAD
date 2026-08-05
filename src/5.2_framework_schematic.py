@@ -13,7 +13,7 @@ from config import RESULT_ROOT
 
 
 OUT_DIR = RESULT_ROOT / "00_workflow"
-BASE_NAME = "Figure_1_scTDA_GCN_framework_schematic"
+BASE_NAME = "Figure_1_ctMV_GCN_framework_schematic"
 
 INK = "#263238"
 GREY = "#4E5A5F"
@@ -219,7 +219,7 @@ def make_figure() -> plt.Figure:
     ax.axis("off")
 
     # Panel a: exact model architecture
-    panel(ax, 0.18, 3.75, 12.64, 4.28, "a", "Data integration and primary scTDA-GCN model")
+    panel(ax, 0.18, 3.75, 12.64, 4.28, "a", "Data integration and primary ctMV-GCN model")
 
     matrix_stack(ax, 0.48, 6.72, 1.0)
     ax.text(1.10, 5.75, "+", ha="center", va="center", fontsize=19, fontweight="bold", color=ORANGE)
