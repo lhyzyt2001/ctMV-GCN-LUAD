@@ -3,11 +3,21 @@
   "upload_type": "software",
   "description": "Reproducible source code, configuration metadata and publication-level derived results for ctMV-GCN, a cell-type-informed transductive multiview graph analysis of lung adenocarcinoma-associated genes.",
   "creators": [
-    {"name": "Zhang, Yuting"},
-    {"name": "Feng, Jihua"},
-    {"name": "Yang, Jiahui"},
-    {"name": "Chen, Zhongxing"},
-    {"name": "Li, Longfei"}
+    {
+      "name": "Zhang, Yuting"
+    },
+    {
+      "name": "Feng, Jihua"
+    },
+    {
+      "name": "Yang, Jiahui"
+    },
+    {
+      "name": "Chen, Zhongxing"
+    },
+    {
+      "name": "Li, Longfei"
+    }
   ],
   "access_right": "open",
   "license": "MIT",
@@ -25,6 +35,11 @@
       "identifier": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.21870287",
+      "relation": "isIdenticalTo",
+      "scheme": "doi"
     }
   ]
 }

@@ -4,9 +4,9 @@
   "git_tag": "v1.0.2",
   "repository": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD",
   "archive_target": "Zenodo",
-  "archive_status": "Pending GitHub release and Zenodo archival",
-  "archive_doi": null,
-  "archive_url": null,
+  "archive_status": "Published",
+  "archive_doi": "10.5281/zenodo.21870287",
+  "archive_url": "https://doi.org/10.5281/zenodo.21870287",
   "previous_releases": [
     {
       "version": "1.0.1",
@@ -21,7 +21,7 @@
   ],
   "github_release": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.2",
   "tracked_file_count_excluding_manifest": 219,
-  "total_bytes_excluding_git_and_manifest": 84035201,
+  "total_bytes_excluding_git_and_manifest": 84035748,
   "largest_file_bytes": 14518306,
   "raw_third_party_data_included": false,
   "patient_level_tcga_working_table_included": false,

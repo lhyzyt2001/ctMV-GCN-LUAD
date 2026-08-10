@@ -3,7 +3,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
 [![Release: v1.0.2](https://img.shields.io/badge/release-v1.0.2-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.2)
-[![DOI: v1.0.2 pending](https://img.shields.io/badge/DOI-v1.0.2%20pending-lightgrey.svg)](https://zenodo.org/)
+[![DOI: v1.0.2](https://zenodo.org/badge/DOI/10.5281/zenodo.21870287.svg)](https://doi.org/10.5281/zenodo.21870287)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -214,7 +214,7 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 
 ## Citation
 
-Version `v1.0.2` adds the final plotting script, the complete independent Figure 1-10 submission set and four formally numbered machine-readable Additional files. It also aligns the manuscript wording with the final archived materials; the fitted predictions and reported numerical results are unchanged. The version-specific v1.0.2 DOI will be inserted after Zenodo has archived the GitHub release.
+Version `v1.0.2` adds the final plotting script, the complete independent Figure 1-10 submission set and four formally numbered machine-readable Additional files. It also aligns the manuscript wording with the final archived materials; the fitted predictions and reported numerical results are unchanged. The immutable v1.0.2 manuscript release is archived at [https://doi.org/10.5281/zenodo.21870287](https://doi.org/10.5281/zenodo.21870287).
 
 Earlier immutable releases remain available: `v1.0.1` at [https://doi.org/10.5281/zenodo.21807929](https://doi.org/10.5281/zenodo.21807929) and `v1.0.0` at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985).
 

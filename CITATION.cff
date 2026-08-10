@@ -4,13 +4,14 @@ title: "ctMV-GCN: cell-type-informed multiview graph learning for lung adenocarc
 type: software
 version: 1.0.2
 date-released: 2026-08-10
-url: "https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.2"
+doi: "10.5281/zenodo.21870287"
+url: "https://doi.org/10.5281/zenodo.21870287"
 repository-code: "https://github.com/lhyzyt2001/ctMV-GCN-LUAD"
 license: MIT
 identifiers:
-  - type: other
-    value: "v1.0.2"
-    description: "GitHub release tag; the version-specific Zenodo DOI is pending archive creation"
+  - type: doi
+    value: "10.5281/zenodo.21870287"
+    description: "Permanent archive of the v1.0.2 manuscript release"
 authors:
   - family-names: Zhang
     given-names: Yuting
