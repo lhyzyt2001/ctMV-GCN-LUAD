@@ -60,5 +60,11 @@ This index maps the main manuscript claims to frozen repository outputs.
 
 ## Figures
 
-Publication figures are supplied as 300-dpi PNG and editable PDF where available. The workflow figure is also supplied as editable SVG. Manuscript composite panels are under `results/_composites`.
+The exact independent submission files are `results/manuscript_submission/Figure_1.pdf` through `Figure_10.pdf`, with matching PNG files at 300-600 dpi. `results/manuscript_submission/SUBMISSION_MANIFEST.json` records byte counts and SHA-256 checksums. Figure 1 is also supplied as editable SVG under `results/00_workflow`.
 
+## Additional files
+
+- `results/manuscript_submission/Additional_files/Additional file 1.xlsx`: complete model benchmark, Top-K recovery and ablation results.
+- `results/manuscript_submission/Additional_files/Additional file 2.xlsx`: robust candidate ranking and model-interpretation results.
+- `results/manuscript_submission/Additional_files/Additional file 3.xlsx`: complete Hallmark and GO Biological Process GSEA results.
+- `results/manuscript_submission/Additional_files/Additional file 4.xlsx`: per-gene TCGA, GSE68465, CPTAC and DepMap statistics.

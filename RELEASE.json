@@ -1,20 +1,32 @@
 {
-  "release": "1.0.1",
-  "release_date": "2026-08-05",
-  "git_tag": "v1.0.1",
+  "release": "1.0.2",
+  "release_date": "2026-08-10",
+  "git_tag": "v1.0.2",
   "repository": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD",
   "archive_target": "Zenodo",
-  "archive_status": "Published",
-  "archive_doi": "10.5281/zenodo.21807929",
-  "archive_url": "https://doi.org/10.5281/zenodo.21807929",
-  "previous_archive_doi": "10.5281/zenodo.21805985",
-  "previous_archive_url": "https://doi.org/10.5281/zenodo.21805985",
-  "github_release": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.1",
-  "tracked_file_count_excluding_manifest": 165,
-  "total_bytes_excluding_git_and_manifest": 73898429,
+  "archive_status": "Pending GitHub release and Zenodo archival",
+  "archive_doi": null,
+  "archive_url": null,
+  "previous_releases": [
+    {
+      "version": "1.0.1",
+      "doi": "10.5281/zenodo.21807929",
+      "url": "https://doi.org/10.5281/zenodo.21807929"
+    },
+    {
+      "version": "1.0.0",
+      "doi": "10.5281/zenodo.21805985",
+      "url": "https://doi.org/10.5281/zenodo.21805985"
+    }
+  ],
+  "github_release": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.2",
+  "tracked_file_count_excluding_manifest": 219,
+  "total_bytes_excluding_git_and_manifest": 84035201,
   "largest_file_bytes": 14518306,
   "raw_third_party_data_included": false,
   "patient_level_tcga_working_table_included": false,
   "model_weights_or_intermediate_tensors_included": false,
-  "derived_publication_results_included": true
+  "derived_publication_results_included": true,
+  "final_submission_figures_included": true,
+  "formal_additional_files_included": true
 }

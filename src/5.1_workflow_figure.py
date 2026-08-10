@@ -227,7 +227,7 @@ def make_figure() -> plt.Figure:
 
     box(
         ax, 11.27, 6.40, 1.25, 1.35,
-        "Output", "Clinical-evidence\nprobability",
+        "Output", "Clinical-evidence\nscore",
         face=PALE_PURPLE, edge=PURPLE, title_size=5.8, body_size=4.3,
     )
     arrow(ax, (10.95, 7.08), (11.25, 7.08), color=PURPLE)

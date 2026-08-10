@@ -17,6 +17,7 @@ BASE_NAME = "Figure_1_ctMV_GCN_framework_schematic"
 
 INK = "#263238"
 GREY = "#4E5A5F"
+TEXT_BLACK = "#000000"
 LIGHT_GREY = "#EEF1F2"
 BLUE = "#0072B2"
 SKY = "#2B8CBE"
@@ -33,7 +34,7 @@ def style() -> None:
         "font.family": "sans-serif",
         "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
         "font.size": 7,
-        "text.color": INK,
+        "text.color": TEXT_BLACK,
         "pdf.fonttype": 42,
         "ps.fonttype": 42,
         "svg.fonttype": "none",
@@ -109,7 +110,7 @@ def matrix_stack(ax, x: float, y: float, scale: float = 1.0) -> None:
                 alpha=0.82, zorder=3 + layer,
             ))
     ax.text(x + 0.63 * scale, y - 0.15 * scale, "TISCH profiles", ha="center", va="top", fontsize=5.2, fontweight="bold")
-    ax.text(x + 0.63 * scale, y - 0.35 * scale, "25,242 genes × 15 cell types", ha="center", va="top", fontsize=4.3, color=GREY)
+    ax.text(x + 0.63 * scale, y - 0.35 * scale, "25,242 genes × 15 cell types", ha="center", va="top", fontsize=4.3, color=TEXT_BLACK)
 
 
 def network_icon(
@@ -180,7 +181,7 @@ def attention_heatmap(ax, x: float, y: float, w: float = 0.78, h: float = 1.12) 
     ax.text(
         x + w / 2, y - 0.12,
         "MLP 60→64→3\nnode-level softmax α",
-        ha="center", va="top", fontsize=3.75, color=GREY, linespacing=1.0,
+        ha="center", va="top", fontsize=3.75, color=TEXT_BLACK, linespacing=1.0,
     )
 
 
@@ -248,7 +249,7 @@ def make_figure() -> plt.Figure:
         linestyle=(0, (5, 3)), zorder=2,
     ))
     ax.text(6.20, 7.82, "Three-view GCN encoder", ha="center", va="bottom", fontsize=5.3, fontweight="bold")
-    ax.text(6.20, 4.78, "Weighted GCN 5→20 · ReLU/dropout 0.5 · weighted GCN 20→20", ha="center", va="bottom", fontsize=3.85, color=GREY)
+    ax.text(6.20, 4.78, "Weighted GCN 5→20 · ReLU/dropout 0.5 · weighted GCN 20→20", ha="center", va="bottom", fontsize=3.85, color=TEXT_BLACK)
 
     for row_y, color in zip(branch_y, colors):
         arrow(ax, (7.40, row_y + 0.29), (7.73, 6.12), color=color, width=0.65, mutation=5)
@@ -262,13 +263,13 @@ def make_figure() -> plt.Figure:
     ax.text(10.24, 5.38, "class-weighted CE", ha="center", va="top", fontsize=4.25, color=VERMILION, fontweight="bold")
     arrow(ax, (10.85, 6.10), (11.24, 6.10), color=PURPLE, width=1.3, mutation=10)
     network_icon(ax, 11.38, 5.48, 0.98, PURPLE, "Prioritized unlabeled gene", highlighted=2)
-    ax.text(11.86, 7.04, "Clinical-evidence\nprobability", ha="center", va="bottom", fontsize=4.5, fontweight="bold")
+    ax.text(11.86, 7.04, "Clinical-evidence\nscore", ha="center", va="bottom", fontsize=4.5, fontweight="bold")
 
     # Panel b: evaluation
     panel(ax, 0.18, 0.18, 3.66, 3.35, "b", "Transductive evaluation")
     cv_icon(ax, 1.00, 2.32, 0.58)
     ax.text(1.00, 1.50, "Repeated 5-fold CV × 3\n15% inner validation", ha="center", va="top", fontsize=4.8, fontweight="bold", linespacing=1.15)
-    ax.text(1.00, 0.82, "Test labels hidden\nall nodes and topology visible", ha="center", va="top", fontsize=4.45, color=GREY, fontweight="medium")
+    ax.text(1.00, 0.86, "Test labels hidden\nall nodes and\ntopology visible", ha="center", va="top", fontsize=4.35, color=TEXT_BLACK, fontweight="medium", linespacing=1.05)
     rounded_box(ax, 1.78, 2.49, 0.88, 0.42, "RWR", face="#E8F3FA", edge=BLUE, fontsize=4.3, weight="bold")
     rounded_box(ax, 2.72, 2.49, 0.88, 0.42, "Degree", face="#E8F3FA", edge=BLUE, fontsize=4.3, weight="bold")
     rounded_box(ax, 1.78, 1.92, 0.88, 0.42, "LR / RF", face="#EEF1F2", edge=GREY, fontsize=4.3, weight="bold")
@@ -324,7 +325,7 @@ def make_figure() -> plt.Figure:
     ax.text(
         6.5, 0.02,
         "Post hoc robust prioritization; external outcomes were not used for selection. Associations do not establish therapeutic efficacy or causality.",
-        ha="center", va="bottom", fontsize=4.3, color=GREY, fontstyle="italic",
+        ha="center", va="bottom", fontsize=4.3, color=TEXT_BLACK, fontstyle="italic",
     )
     return fig
 

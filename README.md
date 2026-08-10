@@ -2,8 +2,8 @@
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
-[![Release: v1.0.1](https://img.shields.io/badge/release-v1.0.1-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.1)
-[![DOI: v1.0.1](https://zenodo.org/badge/DOI/10.5281/zenodo.21807929.svg)](https://doi.org/10.5281/zenodo.21807929)
+[![Release: v1.0.2](https://img.shields.io/badge/release-v1.0.2-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.2)
+[![DOI: v1.0.2 pending](https://img.shields.io/badge/DOI-v1.0.2%20pending-lightgrey.svg)](https://zenodo.org/)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -169,6 +169,7 @@ The full run includes:
 | 9 | `4.2_external_validation.py` | GSE68465 and CPTAC characterization |
 | 10 | `4.3_depmap_validation.py` | DepMap Public 26Q1 LUAD dependency analysis |
 | 11 | `5.1_workflow_figure.py`, `5.2_framework_schematic.py` | publication workflow figures |
+| 12 | `6.1_bmc_submission_figures.py` | assemble the final independent Figure 1-10 submission set |
 
 GSEA uses 2,000 permutations and is the longest stage. Individual sensitivity analyses can be run separately:
 
@@ -189,6 +190,7 @@ The tracked `results/` directory contains publication-level result tables, candi
 - [`results/08_robustness/robust_top20.csv`](results/08_robustness/robust_top20.csv)
 - [`results/07_validation/robust_top20_integrated_candidate_evidence.csv`](results/07_validation/robust_top20_integrated_candidate_evidence.csv)
 - [`results/08_robustness/external_validation/external_validation_with_dependency_summary.csv`](results/08_robustness/external_validation/external_validation_with_dependency_summary.csv)
+- [`results/manuscript_submission`](results/manuscript_submission) (final Figure 1-10 PDF/PNG files and Additional files 1-4)
 
 A manuscript-to-file map is provided in [docs/RESULTS_INDEX.md](docs/RESULTS_INDEX.md).
 
@@ -212,7 +214,9 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 
 ## Citation
 
-Version `v1.0.1` standardizes the descriptive model name as ctMV-GCN and corrects the loss label to class-weighted cross-entropy; no numerical result or experimental design changed. The immutable manuscript release is archived at [https://doi.org/10.5281/zenodo.21807929](https://doi.org/10.5281/zenodo.21807929). The earlier `v1.0.0` archive, which used the former internal identifier, remains permanently available at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985).
+Version `v1.0.2` adds the final plotting script, the complete independent Figure 1-10 submission set and four formally numbered machine-readable Additional files. It also aligns the manuscript wording with the final archived materials; the fitted predictions and reported numerical results are unchanged. The version-specific v1.0.2 DOI will be inserted after Zenodo has archived the GitHub release.
+
+Earlier immutable releases remain available: `v1.0.1` at [https://doi.org/10.5281/zenodo.21807929](https://doi.org/10.5281/zenodo.21807929) and `v1.0.0` at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985).
 
 ## License
 
