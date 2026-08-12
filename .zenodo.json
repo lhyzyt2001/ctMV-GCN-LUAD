@@ -35,7 +35,11 @@
       "identifier": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.21902217",
+      "relation": "isIdenticalTo",
+      "scheme": "doi"
     }
-   
   ]
 }

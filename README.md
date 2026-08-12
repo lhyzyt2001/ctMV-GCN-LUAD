@@ -3,7 +3,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
 [![Release: v1.0.3](https://img.shields.io/badge/release-v1.0.3-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.3)
-[![Previous archive: v1.0.2](https://zenodo.org/badge/DOI/10.5281/zenodo.21870287.svg)](https://doi.org/10.5281/zenodo.21870287)
+[![DOI: v1.0.3](https://zenodo.org/badge/DOI/10.5281/zenodo.21902217.svg)](https://doi.org/10.5281/zenodo.21902217)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -185,6 +185,7 @@ The final Cox proportional-hazards diagnostics and gene-cluster bootstrap can be
 
 ```bash
 python src/sensitivity/run_final_sensitivity.py --help
+```
 
 ## Frozen derived results
 
@@ -229,15 +230,17 @@ The degree-matched gene-cluster bootstrap retained a positive ctMV-GCN-minus-deg
 
 Schoenfeld-residual diagnostics identified FDR-adjusted expression-term proportional-hazards violations for APOA2 and FCER1A in TCGA overall survival and for FCER1A, POSTN and C4A in GSE68465. The corresponding hazard ratios are interpreted as average associations over follow-up rather than constant effects.
 
+The immutable v1.0.3 final manuscript-sensitivity release is archived at [https://doi.org/10.5281/zenodo.21902217](https://doi.org/10.5281/zenodo.21902217).
+
 ### Previous releases
 
 Version `v1.0.2` added the final plotting script, the complete independent Figure 1–10 submission set and four formally numbered machine-readable Additional files. The immutable v1.0.2 release is archived at [https://doi.org/10.5281/zenodo.21870287](https://doi.org/10.5281/zenodo.21870287).
 
 Earlier immutable releases remain available: `v1.0.1` at [https://doi.org/10.5281/zenodo.21807929](https://doi.org/10.5281/zenodo.21807929) and `v1.0.0` at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985).
-```
 
 ## Citation
 
+Zhang Y, Feng J, Yang J, Chen Z, Li L. *ctMV-GCN: cell-type-informed multiview graph learning for lung adenocarcinoma gene prioritization*. Version 1.0.3. Zenodo. 2026. [https://doi.org/10.5281/zenodo.21902217](https://doi.org/10.5281/zenodo.21902217).
 
 ## License
 
