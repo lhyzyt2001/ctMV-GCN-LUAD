@@ -1,0 +1,2 @@
+﻿Bootstrap_Unit,Matching,Bootstrap_Replicates,Random_Seed,Gene_N,Positive_Gene_N,Repeat_N,ctMV_GCN_AUPRC_Median,Degree_Logistic_AUPRC_Median,Difference_Median,Difference_CI_Lower,Difference_CI_Upper,Two_Sided_Bootstrap_P
+gene cluster; the same resampled genes were evaluated in all three repeat-level OOF datasets,1:1 positive-unlabeled within each of ten empirical STRING-degree strata,2000,42,25242,1184,3,0.6480590705905998,0.6268363024263159,0.021487456385747505,-0.0017895984164378125,0.04438953713263525,0.07196401799100449

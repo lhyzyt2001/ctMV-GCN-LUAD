@@ -2,8 +2,8 @@
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/Code%20license-MIT-green.svg)](LICENSE)
-[![Release: v1.0.2](https://img.shields.io/badge/release-v1.0.2-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.2)
-[![DOI: v1.0.2](https://zenodo.org/badge/DOI/10.5281/zenodo.21870287.svg)](https://doi.org/10.5281/zenodo.21870287)
+[![Release: v1.0.3](https://img.shields.io/badge/release-v1.0.3-5c6bc0.svg)](https://github.com/lhyzyt2001/ctMV-GCN-LUAD/releases/tag/v1.0.3)
+[![Previous archive: v1.0.2](https://zenodo.org/badge/DOI/10.5281/zenodo.21870287.svg)](https://doi.org/10.5281/zenodo.21870287)
 
 This repository contains the analysis code and publication-level derived results for:
 
@@ -26,7 +26,7 @@ This repository retains all strong comparators and negative validation results.
 - The endpoint is Open Targets clinical evidence (`maxClinicalTrialPhase > 0`), not causal target validity.
 - Evaluation is **transductive** repeated five-fold cross-validation with three repeats. Outer-test labels are hidden, but all nodes and disease-independent topology remain visible.
 - Random walk with restart (RWR) and a network-degree logistic model outperform the proposed GNN in the primary benchmark.
-- Degree-aware analyses show a small residual advantage over degree alone, but also show that topology explains a substantial part of the GNN score.
+- The original repeat-aware degree-matched analysis suggested a small residual advantage over degree alone. In the more conservative gene-cluster bootstrap, the point estimate remained positive, but the 95% confidence interval included zero (two-sided P = 0.072); therefore, evidence for an increment beyond network degree is directional rather than statistically robust.
 - External survival associations do not replicate after false-discovery-rate correction.
 - No robustness-aware candidate meets the prespecified DepMap LUAD functional-dependency rule.
 
@@ -179,6 +179,13 @@ python 3.2_analysis3.py --analysis degree_residualized
 python 3.2_analysis3.py --analysis hub_structural_filtered
 ```
 
+### Final sensitivity analyses
+
+The final Cox proportional-hazards diagnostics and gene-cluster bootstrap can be run from the repository root with:
+
+```bash
+python src/sensitivity/run_final_sensitivity.py --help
+
 ## Frozen derived results
 
 The tracked `results/` directory contains publication-level result tables, candidate rankings, out-of-fold predictions, manifests and main figures. It excludes raw inputs and large binary training artifacts. Start with:
@@ -190,7 +197,7 @@ The tracked `results/` directory contains publication-level result tables, candi
 - [`results/08_robustness/robust_top20.csv`](results/08_robustness/robust_top20.csv)
 - [`results/07_validation/robust_top20_integrated_candidate_evidence.csv`](results/07_validation/robust_top20_integrated_candidate_evidence.csv)
 - [`results/08_robustness/external_validation/external_validation_with_dependency_summary.csv`](results/08_robustness/external_validation/external_validation_with_dependency_summary.csv)
-- [`results/manuscript_submission`](results/manuscript_submission) (final Figure 1-10 PDF/PNG files and Additional files 1-4)
+- [`results/manuscript_submission`](results/manuscript_submission) (final Figure 1-10 PDF/PNG files and Additional files 1-6)
 
 A manuscript-to-file map is provided in [docs/RESULTS_INDEX.md](docs/RESULTS_INDEX.md).
 
@@ -212,11 +219,25 @@ The robustness score combines degree-residual score percentile (0.50), top-500 f
 - CPTAC tumor protein values use a study-specific zero reference and are not a paired tumor-normal comparison.
 - External outcomes are not used to select the robust top 20.
 
-## Citation
+## Release history
 
-Version `v1.0.2` adds the final plotting script, the complete independent Figure 1-10 submission set and four formally numbered machine-readable Additional files. It also aligns the manuscript wording with the final archived materials; the fitted predictions and reported numerical results are unchanged. The immutable v1.0.2 manuscript release is archived at [https://doi.org/10.5281/zenodo.21870287](https://doi.org/10.5281/zenodo.21870287).
+### v1.0.3 final manuscript-sensitivity release
+
+Version `v1.0.3` adds the final gene-cluster bootstrap and Cox proportional-hazards diagnostics used by the submitted manuscript. The fitted predictions, primary benchmark values and fixed robust top-20 candidate set are unchanged.
+
+The degree-matched gene-cluster bootstrap retained a positive ctMV-GCN-minus-degree AUPRC difference (median 0.0215), but its 95% confidence interval included zero (−0.0018 to 0.0444; two-sided P = 0.072). The result therefore provides directional, but not statistically robust, evidence of an increment beyond network degree.
+
+Schoenfeld-residual diagnostics identified FDR-adjusted expression-term proportional-hazards violations for APOA2 and FCER1A in TCGA overall survival and for FCER1A, POSTN and C4A in GSE68465. The corresponding hazard ratios are interpreted as average associations over follow-up rather than constant effects.
+
+### Previous releases
+
+Version `v1.0.2` added the final plotting script, the complete independent Figure 1–10 submission set and four formally numbered machine-readable Additional files. The immutable v1.0.2 release is archived at [https://doi.org/10.5281/zenodo.21870287](https://doi.org/10.5281/zenodo.21870287).
 
 Earlier immutable releases remain available: `v1.0.1` at [https://doi.org/10.5281/zenodo.21807929](https://doi.org/10.5281/zenodo.21807929) and `v1.0.0` at [https://doi.org/10.5281/zenodo.21805985](https://doi.org/10.5281/zenodo.21805985).
+```
+
+## Citation
+
 
 ## License
 

@@ -21,8 +21,8 @@
   ],
   "access_right": "open",
   "license": "MIT",
-  "version": "1.0.2",
-  "publication_date": "2026-08-10",
+  "version": "1.0.3",
+  "publication_date": "2026-08-12",
   "keywords": [
     "lung adenocarcinoma",
     "graph neural network",
@@ -35,11 +35,7 @@
       "identifier": "https://github.com/lhyzyt2001/ctMV-GCN-LUAD",
       "relation": "isSupplementTo",
       "scheme": "url"
-    },
-    {
-      "identifier": "10.5281/zenodo.21870287",
-      "relation": "isIdenticalTo",
-      "scheme": "doi"
     }
+   
   ]
 }

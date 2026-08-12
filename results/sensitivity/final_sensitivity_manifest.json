@@ -1,0 +1,25 @@
+{
+  "ph_test_method": "Pearson correlation of Schoenfeld residuals with ranked event time; BH FDR within each cohort/endpoint family",
+  "ph_nominal_violations": 42,
+  "ph_fdr_violations": 22,
+  "models_with_any_covariate_nominal_violation": 37,
+  "models_with_any_covariate_fdr_violation": 20,
+  "models_with_expression_nominal_violation": 9,
+  "models_with_expression_fdr_violation": 5,
+  "cluster_bootstrap": {
+    "Bootstrap_Unit": "gene cluster; the same resampled genes were evaluated in all three repeat-level OOF datasets",
+    "Matching": "1:1 positive-unlabeled within each of ten empirical STRING-degree strata",
+    "Bootstrap_Replicates": 2000,
+    "Random_Seed": 42,
+    "Gene_N": 25242,
+    "Positive_Gene_N": 1184,
+    "Repeat_N": 3,
+    "ctMV_GCN_AUPRC_Median": 0.6480590705905998,
+    "Degree_Logistic_AUPRC_Median": 0.6268363024263159,
+    "Difference_Median": 0.021487456385747505,
+    "Difference_CI_Lower": -0.0017895984164378125,
+    "Difference_CI_Upper": 0.04438953713263525,
+    "Two_Sided_Bootstrap_P": 0.07196401799100449
+  },
+  "python": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]"
+}

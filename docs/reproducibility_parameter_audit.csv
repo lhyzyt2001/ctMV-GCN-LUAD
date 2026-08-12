@@ -1,0 +1,39 @@
+Component,Parameter,Implemented value,Code source,Interpretation
+TISCH feature matrix,Input dimensions,25242 genes x 15 cell-type aggregates,results/01_data/celltype_expression_features.csv,Frozen derived matrix
+TISCH feature matrix,Additional transformation before graph construction,None,src/common.py and src/1.3_coexp.py,The frozen distributed matrix was used directly
+TISCH feature matrix,Gene symbols,Strip whitespace and uppercase; duplicate symbols keep first,src/common.py:load_feature_table,Deterministic identifier handling
+TISCH feature matrix,Non-numeric or non-finite values,Coerce to missing then replace by zero,src/common.py:load_feature_table,No missing values remained in the frozen matrix
+Cell-type graph,Profile normalization,Within-gene centering and population SD scaling across 15 cell types,src/1.3_coexp.py,Used only to construct the similarity graph
+Cell-type graph,Similarity metric,Cosine similarity = max(0; 1 - cosine distance),src/1.3_coexp.py,Negative similarities truncated to zero
+Cell-type graph,Neighborhood,Mutual 12-nearest neighbors,src/config.py and src/1.3_coexp.py,Only reciprocal neighbors retained
+Cell-type graph,Ties,Ordering returned by scikit-learn NearestNeighbors; no custom random tie-break,src/1.3_coexp.py,No label information used
+Cell-type graph,Mutual-edge weight,Mean of the two directed cosine similarities,src/1.3_coexp.py,Directed reciprocal edges retained after symmetrization
+Node features,Standardization,StandardScaler fitted on outer-training nodes only,src/experiment.py,Applied to all nodes after fitting
+Node features,PCA,5 components; random_state 42; fitted on outer-training nodes only,src/config.py and src/experiment.py,No outer-test feature fitting
+Graph architecture,Per-view branch,Two GCN layers with 20 hidden units per layer,src/models.py,Three parallel branches
+Graph architecture,Attention network,60 to 64 to 3 with ReLU and softmax,src/models.py,Node-specific local attention
+Graph architecture,Fused classifier,Concatenated weighted 3 x 20 representation to 2 logits,src/models.py,Positive-class softmax score used for ranking
+Training,Dropout,0.5 after the first convolution in each branch,src/models.py,Fixed across analyses
+Training,Optimizer,Adam; learning rate 0.01; weight decay 0.0005,src/experiment.py,Fixed across analyses
+Training,Loss,Class-weighted two-logit cross-entropy; positive weight N-negative/N-positive,src/experiment.py,Other nodes treated as unlabeled/negative
+Cross-validation,Outer design,Repeated stratified 5-fold with 3 repeats,src/config.py and src/2.1_compare3.py,15 outer fits
+Cross-validation,Inner validation,15% of each outer-training partition,src/config.py and src/2.1_compare3.py,Used for stopping and F1 threshold
+Training,Maximum epochs,50,src/config.py,Validation evaluated every 5 epochs
+Training,Early stopping,4 validation evaluations without improvement greater than 0.0001,src/experiment.py,Validation AUPRC criterion
+Final ensemble,Seeds,42 to 132 in increments of 10 (10 models),src/config.py,Fixed seed ensemble
+Final ensemble,Training set,All 25242 nodes and current labels including all 1184 positives,src/2.2_train2.py,Final genome-wide scoring model
+Final ensemble,Epochs,46 = median best epoch across cross-validation fits,src/2.2_train2.py,No external outcome used
+GSEA,Gene sets,Locally versioned Hallmark 2020 and GO Biological Process 2021,src/3.2_analysis3.py,KEGG excluded from validation to avoid circularity
+GSEA,Gene-set size,10 to 500 genes,src/3.2_analysis3.py,Applied after mapping
+GSEA,Permutations and seed,2000 permutations; seed 42; 4 threads,src/3.2_analysis3.py,Pre-ranked GSEApy
+GSEA,Duplicate ranks,Duplicate gene symbols keep first then scores sorted descending,src/3.2_analysis3.py,One rank per retained symbol
+TCGA expression,Input scale,UCSC Xena TCGA.LUAD.sampleMap_HiSeqV2 as distributed; candidate maximum 16.5848,src/3.3_biological_validation.py and src/3.4_TCGA3.py,Conditional log2(x+1) trigger at maximum greater than 50 was not activated
+TCGA Cox,Expression scaling,Per-gene standard deviation standardization,src/3.4_TCGA3.py,Age also standardized
+TCGA Cox,Ties,Efron,src/3.4_TCGA3.py,Continuous expression models
+GSE68465 expression,Input processing,GEO processed series matrix; log2(x+1) because the 99th percentile exceeded 50,src/4.2_external_validation.py,No additional between-array normalization implemented
+GSE68465 mapping,GPL96 annotation,Frozen GPL96.annot.gz; split multi-symbol annotations; maximum-IQR probe selected outcome-blind,src/4.2_external_validation.py,One probe retained per candidate gene
+GSE68465 missing data,Handling,Per-analysis complete cases after numeric coercion,src/4.2_external_validation.py,Cox models used complete cases
+DepMap,Statistical test,One-sided Wilcoxon signed-rank versus zero with alternative less and zero_method wilcox,src/4.3_depmap_validation.py,Benjamini-Hochberg correction across tested candidates
+Hyperparameter provenance,Fixed parameters,"PCA=5; k=12; hidden dimensions; dropout; optimizer settings were held fixed and not optimized on outer-test folds",src/config.py and src/models.py,Only stopping epoch and F1 threshold used inner validation
+Final sensitivity,Cox PH diagnostic,Pearson correlation of Schoenfeld residuals with ranked event time; BH correction within cohort/endpoint/covariate family,Additional file 6/run_final_sensitivity.py,Per-covariate diagnostic
+Final sensitivity,Gene-cluster bootstrap,2000 replicates; seed 42; 1:1 positive-unlabeled within empirical STRING-degree strata,Additional file 6/run_final_sensitivity.py,Same resampled genes evaluated in all three repeat-level OOF datasets

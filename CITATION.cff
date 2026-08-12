@@ -2,16 +2,12 @@ cff-version: 1.2.0
 message: "If you use this software or its derived results, please cite this repository and the associated manuscript."
 title: "ctMV-GCN: cell-type-informed multiview graph learning for lung adenocarcinoma gene prioritization"
 type: software
-version: 1.0.2
-date-released: 2026-08-10
-doi: "10.5281/zenodo.21870287"
-url: "https://doi.org/10.5281/zenodo.21870287"
+version: 1.0.3
+date-released: 2026-08-12
+
 repository-code: "https://github.com/lhyzyt2001/ctMV-GCN-LUAD"
 license: MIT
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.21870287"
-    description: "Permanent archive of the v1.0.2 manuscript release"
+
 authors:
   - family-names: Zhang
     given-names: Yuting
